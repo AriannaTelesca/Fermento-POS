@@ -31,7 +31,7 @@ const registerProduit = (req, res) =>{
 };
 
 const updateProdName = (req, res) => {
-    Produits.findOneAndUpdate({ name : req.params.name }, {name : req.body.name })
+    Produits.findOneAndUpdate({ _id : req.params.name }, {name : req.body.name })
     .then(() => res.json('Name is changed'))
     .catch((err => res.status(400).json("Error" +err)))
 }
@@ -48,6 +48,18 @@ const updateProdTVA = (req, res) => {
     .catch((err => res.status(400).json("Error" +err)))
 }
 
+const updateProdDescr = (req, res) => {
+    Produits.findOneAndUpdate({ _id : req.params._id}, { description : req.body.description})
+    .then(() => res.json('Description is changed'))
+    .catch((err => res.status(400).json("Error" + err)))
+}
+
+const deleteProd = (req, res) => {
+    Produits.findByIdAndDelete({ _id: req.params._id})
+    .then(() => res.json('Produit delete'))
+    .catch((err => res.status(400).json('Errror' + err)))
+}
+
 const getAllProd = (req, res) => {
     Produits.find()
     .then((result) => res.json(result))
@@ -59,6 +71,8 @@ module.exports = {
     updateProdName,
     updateProdPrice,
     updateProdTVA,
+    updateProdDescr,
+    deleteProd,
     getAllProd
 
 }
