@@ -7,6 +7,6 @@ Front-end : React.js
 Back-end : Node.js
 
 ERD:  
-![ERD](../erdFermento.png)
+![ERD](erdFERMENTO.png)
 
 Working in progress.
