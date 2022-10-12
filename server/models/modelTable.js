@@ -4,7 +4,7 @@ const mongoDb = process.env.urlDB;
 
 const fermentoDB = mongoose.createConnection(mongoDb);
 
-const Tables = fermentoDB.model('Table',
+const Tables = fermentoDB.model('Tables',
     new mongoose.Schema({
         name : {
             type : String,
