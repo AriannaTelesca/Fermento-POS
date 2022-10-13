@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { registerOrder, deleteOrder, getAllOrders } = require('../controllers/controlOrders');
+const { registerOrder, deleteOrder, getAllOrders, updateOrderTable, updateOrderProd } = require('../controllers/controlOrders');
 const { registerProduit, updateProdName, updateProdPrice, updateProdTVA, getAllProd, updateProdDescr, deleteProd } = require('../controllers/controlProduits');
 const { postTable, getAllTables, deleteTable } =  require('../controllers/controlTables');
 
@@ -21,6 +21,8 @@ router.delete('/deleteTable/:_id', deleteTable);
 router.post('/registerOrder', registerOrder);
 router.delete('/deleteOrder/:_id', deleteOrder);
 router.get('/getAllOrders', getAllOrders)
+router.put('/updateOrderTable/:_id', updateOrderTable);
+router.put('/updateOrderProd/:_id', updateOrderProd);
 
 
 

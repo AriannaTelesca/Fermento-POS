@@ -9,10 +9,16 @@ const Orders = fermentoDB.model('Orders',
         table : {
             type : mongoose.Schema.Types.ObjectId, ref : 'Tables'
         },
-        produits : {
-            type : [mongoose.Schema.Types.ObjectId], ref : 'Produits',
-            required : true
-        },
+        produits : [{
+            prod : {
+                type : mongoose.Schema.Types.ObjectId, ref : 'Produits',
+                required : true
+            },
+            quantity :{
+               type : Number,
+               required : true 
+            }
+        }],
         day : {
             type : Number,
             required : true

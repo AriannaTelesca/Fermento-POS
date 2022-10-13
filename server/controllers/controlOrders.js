@@ -29,8 +29,22 @@ const getAllOrders = (req, res) => {
     .catch((err => res.status(400).json('Error ' +err)))
 }
 
+const updateOrderTable = (req, res) => {
+    Orders.findOneAndUpdate({_id: req.params._id}, {table : req.body.table})
+    .then(() => res.json('Table changed'))
+    .catch((err => res.status(400).json('Error ' +err)))
+}
+
+const updateOrderProd = (req, res) => {
+    Orders.findOneAndUpdate({_id: req.params._id}, {$push : {produits : req.body.produits}})
+    .then(() => res.json('Order update'))
+    .catch((err => res.status(400).json('Error ' +err)))
+}
+
 module.exports = {
     registerOrder,
     deleteOrder, 
-    getAllOrders
+    getAllOrders,
+    updateOrderTable,
+    updateOrderProd
 }
