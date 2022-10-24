@@ -1,6 +1,6 @@
 ## FERMENTO POS ##
 
-As personal projet during BeCode training I'm working on restaurant's POS.
+I'm working on the development of a restaurant's POS as personal projet during BeCode training.
 
 Front-end : React.js  
 
